@@ -1,0 +1,24 @@
+{
+  "name": "hearingsite",
+  "version": "1.0.0",
+  "description": "Website for finding accessible theaters",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite": "lite-server",
+    "start": "npm run lite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andymcadams-dev/hearingsite.git"
+  },
+  "author": "Andrew McAdams, Michael Whitt, Jacob Mooney",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andymcadams-dev/hearingsite/issues"
+  },
+  "homepage": "https://github.com/andymcadams-dev/hearingsite#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.0"
+  }
+}
