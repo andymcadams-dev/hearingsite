@@ -8,8 +8,12 @@
 /*AccountPage CSS*/
 body {
     width: 100%;
-    background-color: #3d2b56;
+    background-color:#212121;
+    /* background-size: cover;
+    background-repeat: no-repeat; */
+    
 }
+
 
 #section1 {
     width: 100%;
@@ -19,7 +23,8 @@ body {
 
 #section1 .card {
     
-    background-color: #ccf5ac;
+    background-color: #bad29f;
+    box-shadow: 0 0 2px white;
 }
 
 #section1 .card-header{
@@ -27,12 +32,13 @@ body {
 }
 
 #section1 .card-body{
-
+background-color: #3d2b56;
+color:white;
 }
 
 #acctPageProfilePic {
     border-radius: 50%;
-    box-shadow: 0 0 5px #3d2b56;
+    box-shadow: 0 0 5px #000;
 }
 
 #userBadge {
@@ -52,16 +58,44 @@ body {
 
 #accountNavTabs{
     border-radius: 5px;
+    color:white;
 }
 
 #navAccountTab{
-color: black ;
+color: white;
 }
 
 #navContributionsTab{
-color: black ;
+color: white ;
 }
 
 #navOtherTab{
-color: black ;
+color: white ;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link{
+    border-bottom: 3px solid transparent;
+    border-top:none;
+    border-left: none;
+    border-right: none;
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link:hover{
+    
+    border-bottom: 3px solid #aaa;
+    
+    
+    
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid aqua;
+}
+#nav-tab{
+    border:none;
+}
+
+#acctTabIcons{
+    color: #bad29f;
+    margin: 4px;
+    padding-right: 5px;
 }
