@@ -19,7 +19,7 @@ body {
 
 #section1 .card {
     
-    background-color: #808a9f;
+    background-color: #ccf5ac;
 }
 
 #section1 .card-header{
@@ -32,13 +32,13 @@ body {
 
 #acctPageProfilePic {
     border-radius: 50%;
-    box-shadow: 0 0 15px #3d2b56;
+    box-shadow: 0 0 5px #3d2b56;
 }
 
 #userBadge {
     margin-bottom: 10px;
     border-radius: 50%;
-    box-shadow: 0 0 15px aqua;
+    box-shadow: 0 0 5px #000;
 }
 
 #editProfileBtn {
