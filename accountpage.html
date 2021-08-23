@@ -2,12 +2,100 @@
 <html>
 
 <head>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/8dacbb56d0.js" crossorigin="anonymous"></script>
+
 <title>Hearing Site</title>
+
 </head>
 
 <body>
-    <h3>Hello testing 456</h3>
-    <h1>Hello testing 123</h1>
+    
+    <section id="section1">
+
+        <div  style="background-color: #808a9f; height: 60px;" class="text-center mb-4">Navbar</div>
+        <div class="container">
+            <div class="row">
+                <div class="col col-4">
+                    <div class="card">
+                        <div class="card-header text-center">
+                            <img id="acctPageProfilePic" width="150px" height="150px" src="https://retailx.com/wp-content/uploads/2019/12/iStock-476085198.jpg">
+                            <div id="acctPageUsername">Username <a href="#" style="color:#3d2b56"><i class="fas fa-edit"></i></a></div>
+                            
+                        </div>
+                        <div class="card-body">
+                            <div class="text-center"><img id="userBadge" width="75px" height="75px" src="https://i.pinimg.com/originals/ff/b2/93/ffb29339bc9a4ead6b5bc68052fd4965.jpg"></div>
+                            <div class="text-center"><span id="userBadgeTier" style="font-weight: bold;">Diamond</span><span> Contributor</span></div>
+                            <hr>
+                            <div class="row">
+                                <div class="col col-2 text-center" >
+                                    <span id="userLevel">1</span>
+                                </div>
+                                <div class="col col-10" style="border-left: 1px solid #bad29f;">
+                                    <span>Level</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col col-2 text-center">
+                                    <span id="numContributions">23</span>
+                                    
+                                </div>
+                                <div class="col col-10" style="border-left: 1px solid #bad29f; border-top: 1px solid #bad29f;">
+                                    <span>Contributions</span>
+                                </div>
+                            </div>
+                            <div class="text-center mt-2">
+                                <a href="#"><button class="btn" id="editProfileBtn" type="" >Edit Profile</button></a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div id="accountNavTabs" class="col col-8">
+                    <nav >
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                          <button class="nav-link active" id="navAccountTab" data-bs-toggle="tab" data-bs-target="#navAccount" type="button" role="tab" aria-controls="navAccount" aria-selected="true"><i class="fas fa-user" id="acctTabIcons"></i>Account</button>
+                          <button class="nav-link" id="navContributionsTab" data-bs-toggle="tab" data-bs-target="#navContributions" type="button" role="tab" aria-controls="navProfile" aria-selected="false"><i class="fas fa-chart-bar" id="acctTabIcons"></i>Contributions</button>
+                          <button class="nav-link" id="navOtherTab" data-bs-toggle="tab" data-bs-target="#navOther" type="button" role="tab" aria-controls="navOther" aria-selected="false"><i class="fas fa-dungeon" id="acctTabIcons"></i>Other</button>
+                        </div>
+                      </nav>
+                      <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="navAccount" role="tabpanel" aria-labelledby="navAccountTab">
+                            <div class="container mt-5">
+                                <div class="row">
+                                    <hr>
+                                    <div class="col-2" ><b>Email:</b></div>
+                                    <div class="col-8" style="border-left: 1px solid aqua; height: 50%;">Hidden</div>
+                                    <div class="col-2 pb-2"><button class="btn btn-sm btn-primary">Edit</button></div>
+                                </div>
+                                <div class="row">
+                                    <hr>
+                                    <div class="col-2"><b>Location:</b></div>
+                                    <div class="col-8" style="border-left: 1px solid aqua; height: 50%;">Dallas, TX</div>
+                                    <div class="col-2 pb-2"><button class="btn btn-sm btn-primary">Edit</button></div>
+                                </div>
+                                <div class="row">
+                                    <hr>
+                                    <div class="col-2"><b>LinkedIn:</b></div>
+                                    <div class="col-8" style="border-left: 1px solid aqua; height: 50%;"><a href="https://www.linkedin.com/in/michael-whitt-6514b475/" style="color:white;">Michael Whitt</a></div>
+                                    <div class="col-2 pb-2"><button class="btn btn-sm btn-primary">Edit</button></div>
+                                    <hr>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="tab-pane fade" id="navContributions" role="tabpanel" aria-labelledby="navContributionsTab">Contributions Info</div>
+                        <div class="tab-pane fade" id="navOther" role="tabpanel" aria-labelledby="navOtherTab">Other Info</div>
+                      </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
 </body>
 
 </html>
