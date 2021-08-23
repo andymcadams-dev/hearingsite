@@ -22,9 +22,10 @@ body {
 
 
 #section1 .card {
-    
+    border: 1px solid #aaa;
     background-color: #bad29f;
-    box-shadow: 0 0 2px white;
+    color: black;
+    border-radius: 5px;
 }
 
 #section1 .card-header{
@@ -32,7 +33,7 @@ body {
 }
 
 #section1 .card-body{
-background-color: #3d2b56;
+background-color: #212121;
 color:white;
 }
 
@@ -43,7 +44,7 @@ color:white;
 
 #userBadge {
     margin-bottom: 10px;
-    border-radius: 50%;
+    border-radius: 25%;
     box-shadow: 0 0 5px #000;
 }
 
