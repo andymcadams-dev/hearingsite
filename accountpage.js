@@ -13,6 +13,8 @@ const linkedInEditBtn = document.getElementById("linkedInEdit");
 const linkedInDiv = document.getElementById("linkedInDiv");
 const saveLinkedInBtn = document.createElement("button");
 
+const progressBar = document.getElementById("progressBar");
+
 function changeEmail(){
     
     emailText.innerHTML = "<input type='text' id='newEmailValue'></input>";
@@ -36,6 +38,7 @@ function saveEmail(){
     if(!emailValue.value.includes("@")
     ){
         alert("Please input valid email address");
+        emailValue.style.display = "none";
     } else {
         emailText.innerHTML = `<a mailto="${emailValue.value}">${emailValue.value}</a>`;
     }
@@ -91,4 +94,87 @@ function saveLinkedIn(){
     }
 }
 
+
+// Gamified
+// Grab total # of contributions (each = 1 xp)
+// dynamic leveling system, ie lv 1 = 1, lv 2 = 3, etc
+let xp = 0;
+let numContributionsString = document.getElementById("numContributions");
+let userLevel = 1; //take user level, change html below profile pic
+let numContributions = parseInt(numContributionsString.innerHTML);
+const numContributionsToLevel = document.getElementById("numContributionsToLevel");
+const currentLevel = document.getElementById("numLevel");
+
+const gainXP = function(){
+    for (let i = 0; i < parseInt(numContributions); i++)
+    xp+= 1;
+    console.log(xp);
+}
+gainXP();
+
+
+const levelOneThresh = 1 //total contributions;
+const levelTwoThresh = 5 //total contributions;
+const levelThreeThresh = 10 //total contributions;
+const levelFourThresh = 20 //total contributions;
+const levelFiveThresh = 25 //total contributions;
+
+function chooseLevel(){
+if(numContributions <= 1){
+    //level 1 is 1 or fewer contributions
+    currentLevel.textContent = 1;
+} else if (numContributions <= 5){
+    // level 2 is 1-5
+    currentLevel.textContent = 2;
+} else if (numContributions <= 10){
+    // level 3 is 6-10
+    currentLevel.textContent = 3;
+} else if (numContributions <= 20){
+    // level 4 11-20
+    currentLevel.textContent = 4;
+} else if (numContributions <= 25){
+    // level 5 21-25
+    currentLevel.textContent = 5;
+}
+}
+
+
+//Change level according to # of contributions vs level threshold
+function addLevel(){
+if (numContributions <= levelOneThresh){
+    numContributionsToLevel.innerHTML = levelOneThresh - numContributions +1;
+}  else if(numContributions <= levelTwoThresh){
+    numContributionsToLevel.innerHTML = levelTwoThresh - numContributions +1;
+} else if(numContributions <= levelThreeThresh){
+    numContributionsToLevel.innerHTML = levelThreeThresh - numContributions +1;
+} else if(numContributions <= levelFourThresh){
+    numContributionsToLevel.innerHTML = levelFourThresh - numContributions +1;
+} else if(numContributions <= levelFiveThresh) {
+    numContributionsToLevel.innerHTML = levelFiveThresh - numContributions;
+ }
+}
+
+//adds Contribution XP
+function addContribution(){
+    numContributions = numContributions + 1;
+    numContributionsString.innerHTML = numContributions;
+    addLevel();
+    chooseLevel();
+    if(numContributions > 25){
+        const contributionsToLevelTextDiv = document.getElementById("contributionsToLevelTextDiv");
+        const contributionsToLevelText = document.getElementById("contributionsToLevelText");
+        numContributionsToLevel.innerHTML = "";
+        contributionsToLevelText.innerHTML = "Max Level!";
+        contributionsToLevelTextDiv.style.border = "none";
+        contributionsToLevelTextDiv.classList = "text-center mt-3";
+        contributionsToLevelTextDiv.style.color = "gold";
+        progressBar.style.display = "none";
+
+    }
+    
+}
+//adds Contribution
+
+chooseLevel();
+addLevel();
 
