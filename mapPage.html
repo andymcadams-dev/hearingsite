@@ -3,22 +3,40 @@
 
 <head>
     <title>Search Accessible Theaters</title>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script src="app.js"></script>
 </head>
 
 <body>
-    <h3>Accessible Theaterssss</h3>
-    <!--The div element for the map -->
-    <div id="map"></div>
+    <h3>Accessible Theaters</h3>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4">
+                <div id="places"></div>
+            </div>
 
-    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+            <div class="col-8">
+                <!--The div element for the map -->
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD-zQJq-2zBUk5EZT4tuNW8cvjFbB2aro&callback=initMap&libraries=&v=weekly"
         async></script>
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD-zQJq-2zBUk5EZT4tuNW8cvjFbB2aro&libraries=places&callback=initMap">
-    </script>
+    <!-- <script async
+         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD-zQJq-2zBUk5EZT4tuNW8cvjFbB2aro&libraries=places&callback=initMap">
+        </script>
+         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBD-zQJq-2zBUk5EZT4tuNW8cvjFbB2aro&libraries=places"></script> -->
 </body>
 
 </html>
