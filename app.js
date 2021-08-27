@@ -1,25 +1,3 @@
-let fetchResults;
-//Call to trueway-places for places nearby information - URL is meant to be dynamic to change based on location
-fetch(`https://trueway-places.p.rapidapi.com/FindPlacesNearby?location=${startPoint.lat}%2C${startPoint.lng}&language=en&radius=10000&type=cinema`, {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "trueway-places.p.rapidapi.com",
-		"x-rapidapi-key": "8c720e6cc4msh7784b8c6cfb215ap1a0fc7jsn74c59d877df8"
-	}
-})
-//Response information to JSON format
-.then(response => {
-    return response.json();
-})
-//Then formatted JSON data to only the "results" portion of the data
-.then(data => {
-    fetchResults = data.results;
-    console.log(fetchResults);
-})
-.catch(err => {
-	console.error(err);
-});
-
 
 //Example Test Object of what is returned
 // {
@@ -41,7 +19,7 @@ fetch(`https://trueway-places.p.rapidapi.com/FindPlacesNearby?location=${startPo
 // }
 
 // Initialize and add the map
-const startPoint = { lat: 32.351246, lng: -95.301063 };
+const startPoint = { lat: 39.7392, lng: -104.9903 };
 function initMap() {
     // Generate map using startPoint as the center
     const map = new google.maps.Map(document.getElementById("map"), {
@@ -54,3 +32,44 @@ function initMap() {
         map: map,
     });
 }
+
+let fetchResults;
+//Call to trueway-places for places nearby information - URL is meant to be dynamic to change based on location
+fetch(`https://trueway-places.p.rapidapi.com/FindPlacesNearby?location=${startPoint.lat}%2C${startPoint.lng}&language=en&radius=10000&type=cinema`, {
+    "method": "GET",
+    "headers": {
+        "x-rapidapi-host": "trueway-places.p.rapidapi.com",
+        "x-rapidapi-key": "8c720e6cc4msh7784b8c6cfb215ap1a0fc7jsn74c59d877df8"
+    }
+})
+    //Response information to JSON format
+    .then(response => {
+        return response.json();
+    })
+    //Then formatted JSON data to only the "results" portion of the data
+    .then(data => {
+        fetchResults = data.results;
+        console.log(fetchResults);
+        return fetchResults;
+    })
+    .then(fetchResults => {
+        fetchResults.map( (data) => {
+            let places = document.getElementById('places');
+            // create ul element and set the attributes.
+            let ul = document.createElement('ul');
+            ul.setAttribute('style', 'padding: 0; margin: 0;');
+            ul.setAttribute('id', 'theList');
+            let li = document.createElement('li');
+            console.log(data)     // create li element.
+            li.innerHTML = data.address;      // assigning text to li using array value.
+            li.setAttribute('style', 'display: block;');    // remove the bullets.
+            ul.appendChild(li);     // append li to ul.
+            places.appendChild(ul);       // add list to the container.
+        }
+        );
+
+    })
+    .catch(err => {
+        console.error("Data response did not work.");
+    });
+
