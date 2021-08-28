@@ -12,7 +12,7 @@
 
 </head>
 
-<body>
+<body class="body">
     
     <section id="section1">
 
@@ -32,23 +32,36 @@
                             <hr>
                             <div class="row">
                                 <div class="col col-2 text-center" >
-                                    <span id="userLevel">1</span>
+                                    <span id="numLevel">1</span>
                                 </div>
                                 <div class="col col-10" style="border-left: 1px solid #bad29f;">
-                                    <span>Level</span>
+                                    <span id="level">Level</span>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col col-2 text-center">
-                                    <span id="numContributions">23</span>
+                                    <span id="numContributions">4</span>
                                     
                                 </div>
                                 <div class="col col-10" style="border-left: 1px solid #bad29f; border-top: 1px solid #bad29f;">
-                                    <span>Contributions</span>
+                                    <span>Total Contributions</span>
                                 </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-2 text-center">
+                                        <span id="numContributionsToLevel">0</span>
+                                        
+                                    </div>
+                                    <div class="col col-10" style="border-left: 1px solid #bad29f; border-top: 1px solid #bad29f;" id="contributionsToLevelTextDiv">
+                                        <span id="contributionsToLevelText">Contributions to Level</span>
+                                    </div>
                             </div>
-                            <div class="text-center mt-2">
-                                <a href="#"><button class="btn" id="editProfileBtn" type="" >Edit Profile</button></a>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col text-center mt-3">
+                                        <div id="progressBar">Progress Bar</div>
+                                    </div>
+                                </div>
                             </div>
                             
                         </div>
@@ -65,29 +78,45 @@
                       <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="navAccount" role="tabpanel" aria-labelledby="navAccountTab">
                             <div class="container mt-5">
-                                <div class="row">
+                                <div class="row" >
                                     <hr>
                                     <div class="col-2" ><b>Email:</b></div>
-                                    <div class="col-8" style="border-left: 1px solid aqua; height: 50%;">Hidden</div>
-                                    <div class="col-2 pb-2"><button class="btn btn-sm btn-primary">Edit</button></div>
+                                    <div class="col-8" style="border-left: 1px solid aqua; height: 50%;" id="emailText">Hidden</div>
+                                    <div class="col-2 pb-2" id="emailDiv"><button class="btn btn-sm btn-primary" id='emailEdit' onclick="changeEmail()">Edit</button></div>
                                 </div>
                                 <div class="row">
                                     <hr>
                                     <div class="col-2"><b>Location:</b></div>
-                                    <div class="col-8" style="border-left: 1px solid aqua; height: 50%;">Dallas, TX</div>
-                                    <div class="col-2 pb-2"><button class="btn btn-sm btn-primary">Edit</button></div>
+                                    <div class="col-8" style="border-left: 1px solid aqua; height: 50%;" id="locationText">Dallas, TX</div>
+                                    <div class="col-2 pb-2" id="locationDiv"><button class="btn btn-sm btn-primary" id="locationEdit" onclick="changeLocation()">Edit</button></div>
                                 </div>
                                 <div class="row">
                                     <hr>
                                     <div class="col-2"><b>LinkedIn:</b></div>
-                                    <div class="col-8" style="border-left: 1px solid aqua; height: 50%;"><a href="https://www.linkedin.com/in/michael-whitt-6514b475/" style="color:white;">Michael Whitt</a></div>
-                                    <div class="col-2 pb-2"><button class="btn btn-sm btn-primary">Edit</button></div>
+                                    <div class="col-8" style="border-left: 1px solid aqua; height: 50%;" id="linkedInTextDiv"><a id="linkedInText" href="https://www.linkedin.com/in/michael-whitt-6514b475/" style="color:white;">Michael Whitt</a></div>
+                                    <div class="col-2 pb-2" id="linkedInDiv"><button class="btn btn-sm btn-primary" id="linkedInEdit" onclick="changeLinkedIn()">Edit</button></div>
                                     <hr>
                                 </div>
                             </div>
                             
                         </div>
-                        <div class="tab-pane fade" id="navContributions" role="tabpanel" aria-labelledby="navContributionsTab">Contributions Info</div>
+                        <div class="tab-pane fade" id="navContributions" role="tabpanel" aria-labelledby="navContributionsTab">
+                            <div class="container">
+                                <div class="row mt-5">
+                                    <div>Recent Contributions</div>
+                                    <div>
+                                        <img src="#" width="150px" height="150px">
+                                        <img src="#" width="150px" height="150px">
+                                        <img src="#" width="150px" height="150px">
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col">
+                                        <button class="btn btn-success" onclick="addContribution()">Add contribution</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="tab-pane fade" id="navOther" role="tabpanel" aria-labelledby="navOtherTab">Other Info</div>
                       </div>
                 </div>
@@ -96,6 +125,8 @@
 
     </section>
 
+    <script src="accountpage.js"></script>
 </body>
+
 
 </html>
